@@ -46,6 +46,7 @@ def savefig(image, processname, filename, contour=None):
     plt.axis('off')
 
     plt.savefig(full_path)
+    plt.clf()
 
     return full_path
 
