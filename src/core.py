@@ -121,8 +121,7 @@ def main():
     dispatcher = updater.dispatcher
 
     unknown_handler = MessageHandler(Filters.command, unknown)
-    dicom_handler = MessageHandler(
-        Filters.document.mime_type("application/dicom"), dicom)
+    dicom_handler = MessageHandler(Filters.document, dicom)
     text_handler = MessageHandler(Filters.text, text)
 
     dispatcher.add_handler(
