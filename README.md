@@ -7,7 +7,7 @@
 ![GitHub issues](https://img.shields.io/github/issues-raw/herlanassis/sanguenacabeca?style=social)
 ![Twitter Follow](https://img.shields.io/twitter/follow/herlanassis?style=social)
 
-Sangue na Cabeça é um(a) `ferramenta` que permite `análise` de arquivos DICOM com suspeira de `hemorragia intracraniana`. Ela pode ser utilizada via bot, pelo link [@SangueNaCabeca](https://telegram.me/SangueNaCabeca).
+Sangue na Cabeça é um(a) `ferramenta` que permite `análise` de arquivos DICOM com suspeira de `hemorragia intracraniana`. Ela pode ser utilizada via bot, pelo link [@SangueNaCabeca](https://telegram.me/SangueNaCabeca_Bot).
 
 Você também pode utilizar um `executável` para executar no seu terminal.
 
@@ -73,6 +73,8 @@ As próximas ações para o SangueNaCabeca são:
 
 - [x] ~~Escrever README~~
 - [ ] Documentar
+- [ ] Adicionar mais exemplos no bot
+- [ ] Melhorar a apresentação do bot explicando seu algoritmo
 - [ ] Referênciar artigo escrito
 - [ ] Referências leitura base
 - [ ] Escrever Testes
