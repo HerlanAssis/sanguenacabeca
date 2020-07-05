@@ -1,19 +1,7 @@
 from telegram.ext import CommandHandler, Filters, MessageHandler, Updater
 from conf.settings import TELEGRAM_TOKEN
 from dicom.files import load_scan_from_dir
-from dicom.processing import process, savefig
-
-
-def _process_file(_filename):
-    fig_paths = []
-    for processed_files in process(_filename):
-        fig_paths.append(savefig(
-            image=processed_files['image'],
-            processname=processed_files['name'],
-            contour=processed_files['contour'],
-            filename=_filename,
-        ))
-    return fig_paths
+from dicom.processing import process_and_save
 
 
 def _send_photos(bot, update, fig_paths):
@@ -57,7 +45,7 @@ def exemplos(bot, update):
 def processe(bot, update, args):
     try:
         for _filename in args:
-            fig_paths = _process_file(_filename)
+            fig_paths = process_and_save(_filename)
             bot.send_message(
                 chat_id=update.message.chat_id,
                 text="Resultados para {}:".format(_filename)
@@ -86,7 +74,7 @@ def dicom(bot, update):
     try:
         dcm = file.download('{}.dcm'.format(file.file_id))
 
-        fig_paths = _process_file(dcm)
+        fig_paths = process_and_save(dcm)
         bot.send_message(
             chat_id=update.message.chat_id,
             text="Resultados para {}:".format(dcm)

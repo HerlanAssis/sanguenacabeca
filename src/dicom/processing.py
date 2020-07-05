@@ -124,3 +124,16 @@ def process(dicom_file):
     })
 
     return process
+
+
+def process_and_save(_filename):
+    fig_paths = []
+    for processed_files in process(_filename):
+        fig_paths.append(savefig(
+            image=processed_files['image'],
+            processname=processed_files['name'],
+            contour=processed_files['contour'],
+            filename=_filename,
+        ))
+    plt.close('all')
+    return fig_paths
