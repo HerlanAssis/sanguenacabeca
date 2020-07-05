@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  server:
+    build: src/
+    restart: always
+    volumes:
+      - ./examples:/app/examples
+    command: python core.py
+    environment:
+      TELEGRAM_TOKEN: ${TELEGRAM_TOKEN}
