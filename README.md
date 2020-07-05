@@ -9,7 +9,7 @@
 
 Sangue na Cabeça é um(a) `ferramenta` que permite `análise` de arquivos DICOM com suspeira de `hemorragia intracraniana`. Ela pode ser utilizada via bot, pelo link [@SangueNaCabeca](https://telegram.me/SangueNaCabeca).
 
-Você também pode utilizar um `arquivo.sh` para executar no seu terminal.
+Você também pode utilizar um `executável` para executar no seu terminal.
 
 Este projeto foi desenvolvido como requisito para conclusão da turma de Inteligência Computacional do Programa de Pós Graduação da UERN/UFERSA no ano de 2020.
 
