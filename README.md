@@ -67,13 +67,11 @@ python src/main.py --files caminho_do_arquivo1 caminho_do_arquivo2
 
 ## TODO
 
-Faça um TODO List, se necessário, das próximas etapas ou do que ficou faltando nesta etapa do projeto.
-
 As próximas ações para o SangueNaCabeca são:
 
 - [x] ~~Escrever README~~
 - [ ] Documentar
-- [ ] Adicionar mais exemplos no bot
+- [X] ~~Adicionar mais exemplos no bot~~
 - [ ] Melhorar a apresentação do bot explicando seu algoritmo
 - [ ] Referênciar artigo escrito
 - [ ] Referências leitura base
