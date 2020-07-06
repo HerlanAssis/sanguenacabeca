@@ -57,7 +57,7 @@ def process(dicom_file):
 
     hu_image = transform_to_hu(medical_image, image)
     brain_image = window_image(hu_image, 80, 85)
-    bone_image = window_image(hu_image, 230, 1000)
+    bone_image = window_image(hu_image, 230, 230)
 
     binary_image = bone_image > threshold_minimum(bone_image)
     edge_sobel_binary = sobel(binary_image)
