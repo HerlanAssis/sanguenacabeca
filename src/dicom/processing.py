@@ -57,7 +57,7 @@ def process(dicom_file):
 
     hu_image = transform_to_hu(medical_image, image)
     brain_image = window_image(hu_image, 80, 85)
-    bone_image = window_image(hu_image, 230, 400)
+    bone_image = window_image(hu_image, 230, 1000)
 
     binary_image = bone_image > threshold_minimum(bone_image)
     edge_sobel_binary = sobel(binary_image)
@@ -76,34 +76,36 @@ def process(dicom_file):
         'image': brain_image,
         'contour': None,
     })
+
     process.append({
-        'name': 'part_1_binary',
-        'image': binary_image,
-        'contour': None,
-    })
-    process.append({
-        'name': 'part_1_edges',
-        'image': edge_sobel_binary,
-        'contour': None,
-    })
-    process.append({
-        'name': 'part_1_fill',
-        'image': fill,
-        'contour': None,
-    })
-    process.append({
-        'name': 'part_1_erosion',
-        'image': erosion,
-        'contour': None,
-    })
-    process.append({
-        'name': 'part_2_otsu_binary',
+        'name': 'part_1_otsu_binary',
         'image': otsu_image,
         'contour': None,
     })
     process.append({
-        'name': 'part_2_edge_otsu',
+        'name': 'part_1_edge_otsu',
         'image': edge_sobel_otsu,
+        'contour': None,
+    })
+
+    process.append({
+        'name': 'part_2_binary',
+        'image': binary_image,
+        'contour': None,
+    })
+    process.append({
+        'name': 'part_2_edges',
+        'image': edge_sobel_binary,
+        'contour': None,
+    })
+    process.append({
+        'name': 'part_2_fill',
+        'image': fill,
+        'contour': None,
+    })
+    process.append({
+        'name': 'part_2_erosion',
+        'image': erosion,
         'contour': None,
     })
 
@@ -117,6 +119,7 @@ def process(dicom_file):
         'image': mediam_filter,
         'contour': None,
     })
+
     process.append({
         'name': 'segmentation',
         'image': brain_image,
