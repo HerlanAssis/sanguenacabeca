@@ -6,8 +6,9 @@ import glob
 from scipy import ndimage
 from pydicom import dcmread
 import matplotlib.pyplot as plt
-from skimage import morphology, color
+from skimage import morphology, color, segmentation
 from skimage.filters import threshold_minimum, threshold_otsu, sobel, median
+from skimage.measure import regionprops
 
 
 def transform_to_hu(medical_image, image):
@@ -51,6 +52,15 @@ def savefig(image, processname, filename, contour=None):
     return full_path
 
 
+def get_center(sample, image):
+    labeled_foreground = sample.astype(int)
+    properties = regionprops(labeled_foreground, image)
+    center_of_mass = properties[0].centroid
+    # weighted_center_of_mass = properties[0].weighted_centroid
+
+    return (int(center_of_mass[0]), int(center_of_mass[1]))
+
+
 def process(dicom_file):
     medical_image = dcmread(dicom_file)
     image = medical_image.pixel_array
@@ -61,7 +71,8 @@ def process(dicom_file):
 
     binary_image = bone_image > threshold_minimum(bone_image)
     edge_sobel_binary = sobel(binary_image)
-    fill = ndimage.morphology.binary_fill_holes(edge_sobel_binary)
+    fill = segmentation.flood_fill(
+        edge_sobel_binary, get_center(brain_image, image), 255)
     erosion = morphology.erosion(fill, morphology.disk(30))
 
     otsu_image = brain_image > threshold_otsu(brain_image)
