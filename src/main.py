@@ -1,9 +1,9 @@
 import argparse
 import os
 from pydicom import dcmread
-from src.dicom.files import load_scan_from_dir, load_scan_from_files
-from src.dicom.processing import process, savefig
-from src.conf import settings
+from dicom.files import load_scan_from_dir, load_scan_from_files
+from dicom.processing import process, savefig
+from conf import settings
 
 
 def dir_path(string):
