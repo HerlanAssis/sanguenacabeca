@@ -35,7 +35,7 @@ cd sanguenacabeca;
 
 2. Siga as instruções do arquivo src/main.py para executar no seu terminal.
 
-3. Ou, acesse o link [SeuBot](https://core.telegram.org/bots) e configure seu bot.
+3. Ou, acesse o link [TelegramBot](https://core.telegram.org/bots) e configure seu bot.
 
 4. Para adicionar seu bot, crie um arquivo `.env` no diretório principal do projeto adicione a variável TELEGRAM_TOKEN=<seu_token>.
 
@@ -74,7 +74,7 @@ As próximas ações para o SangueNaCabeca são:
 - [X] ~~Adicionar mais exemplos no bot~~
 - [ ] Melhorar a apresentação do bot explicando seu algoritmo
 - [ ] Referênciar artigo escrito
-- [ ] Referências leitura base
+- [X] ~~Referências leitura base~~
 - [ ] Escrever Testes
 
 ## Contribuindo para SangueNaCabeca
@@ -95,6 +95,17 @@ Agradeço às seguintes pessoas que contribuíram para este projeto:
 
 - [@herlanassis](https://github.com/herlanassis)
 - [José Ricardo Soriano](mailto:jrsoriano.sistemas@gmail.com)
+
+
+## Material de Apoio
+
+Durante o desenvolvimento desta ferramenta o seguinte material foi consultado:
+
+- https://medium.com/@mdcg.dev/desenvolvendo-o-seu-primeiro-chatbot-no-telegram-com-python-a9ad787bdf6
+- https://medium.com/@taposhdr/medical-image-analysis-with-deep-learning-i-23d518abf531
+- https://vincentblog.xyz/posts/medical-images-in-python-computed-tomography
+- https://www.kaggle.com/c/rsna-intracranial-hemorrhage-detection/overview/description
+- https://scikit-image.org/
 
 ## Contato
 
