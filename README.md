@@ -94,7 +94,7 @@ Como alternativa, consulte a documentação do GitHub em [criando uma pull reque
 Agradeço às seguintes pessoas que contribuíram para este projeto:
 
 - [@herlanassis](https://github.com/herlanassis)
-- [José Ricardo Soriano](jrsoriano.sistemas@gmail.com)
+- [José Ricardo Soriano](mailto:jrsoriano.sistemas@gmail.com)
 
 ## Contato
 
