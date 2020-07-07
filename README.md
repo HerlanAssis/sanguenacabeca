@@ -7,7 +7,7 @@
 ![GitHub issues](https://img.shields.io/github/issues-raw/herlanassis/sanguenacabeca?style=social)
 ![Twitter Follow](https://img.shields.io/twitter/follow/herlanassis?style=social)
 
-Sangue na Cabeça é um(a) `ferramenta` que permite `análise` de arquivos DICOM com suspeira de `hemorragia intracraniana`. Ela pode ser utilizada via bot, pelo link [@SangueNaCabeca](https://telegram.me/SangueNaCabeca_Bot).
+Sangue na Cabeça é uma `ferramenta` que permite `análise` de arquivos DICOM com suspeira de `hemorragia intracraniana`. Ela pode ser utilizada via bot, pelo link [@SangueNaCabeca](https://telegram.me/SangueNaCabeca_Bot).
 
 Você também pode utilizar um `executável` para executar no seu terminal.
 
@@ -49,14 +49,14 @@ docker-compose up -d --build
 
 Para usar o SangueNaCabeca, siga estes passos:
 
-1. crie um ambiente virtual com o conda, ative ele e execute:
+* crie um ambiente virtual com o conda, ative ele e execute o scrypt `main.py` para ser as instruções:
 
 ```shell
 conda install --file requirements.txt --yes
 ```
 
 ```
-python src/main.py --path caminho_da_pasta
+python src/main.py --path caminho_da_pasta/
 ```
 
 OU
@@ -94,8 +94,7 @@ Como alternativa, consulte a documentação do GitHub em [criando uma pull reque
 Agradeço às seguintes pessoas que contribuíram para este projeto:
 
 - [@herlanassis](https://github.com/herlanassis)
-
-Você pode considerar o uso de algo como a especificação como [Todos os colaboradores](https://github.com/all-contributors/all-contributors) e sua [chave emoji] (https://allcontributors.org/docs/pt/ tecla emoji).
+- [José Ricardo Soriano](jrsoriano.sistemas@gmail.com)
 
 ## Contato
 
