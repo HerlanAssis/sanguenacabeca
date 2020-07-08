@@ -6,6 +6,7 @@ services:
     restart: always
     volumes:
       - ./examples:/app/examples
+      - ./kaggle:/kaggle
     command: python core.py
     environment:
       TELEGRAM_TOKEN: ${TELEGRAM_TOKEN}

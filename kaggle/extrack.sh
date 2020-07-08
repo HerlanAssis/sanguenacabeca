@@ -1,0 +1,1 @@
+tar -zxvf stage_2_train.csv.tar.gz

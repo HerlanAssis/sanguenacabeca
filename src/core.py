@@ -2,16 +2,15 @@ from telegram.ext import CommandHandler, Filters, MessageHandler, Updater
 from conf.settings import TELEGRAM_TOKEN
 from dicom.files import load_scan_from_dir
 from dicom.processing import process_and_save
+from get_kaggle_rsna_data import get_sample_info_by
+import logging
+import sys
+logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 
 
 def _send_photos(bot, update, fig_paths):
     for fig in fig_paths:
         bot.send_photo(update.message.chat_id, photo=open(fig, 'rb'))
-
-    bot.send_message(
-        chat_id=update.message.chat_id,
-        text="\n\nPronto!\n"
-    )
 
 
 def start(bot, update):
@@ -51,6 +50,22 @@ def processe(bot, update, args):
                 text="Resultados para {}:".format(_filename)
             )
             _send_photos(bot, update, fig_paths)
+
+            try:
+                # remove 'examples/' from examples/ID_647a6fadd.dcm:
+                # and get id 'ID_647a6fadd' from /ID_647a6fadd.dcm:
+                extra_info = get_sample_info_by(_filename[9:].split('.')[0])
+
+                if len(extra_info) > 0:
+                    extra_info_message = "\n".join(
+                        ["{}: {}".format(sample[0], sample[1]) for sample in extra_info])
+
+                    bot.send_message(
+                        chat_id=update.message.chat_id,
+                        text=extra_info_message
+                    )
+            except:
+                pass
 
         if not args:
             bot.send_message(
